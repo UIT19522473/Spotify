@@ -10,10 +10,10 @@ const AudioPlayer = (props) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackProgress, setTrackProgress] = useState(0);
   var audioSrc = total[currentIndex]?.track?.preview_url;
-  useEffect(() => {
-    let test = total.filter((item) => item?.track?.preview_url);
-    console.log({ currentIndex, audioSrc, total });
-  }, []);
+  // useEffect(() => {
+  //   let test = total.filter((item) => item?.track?.preview_url);
+  //   console.log({ currentIndex, audioSrc, total });
+  // }, []);
 
   const audioRef = useRef(new Audio(total[0]?.track.preview_url));
   const intervalRef = useRef();
