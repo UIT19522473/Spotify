@@ -5,6 +5,7 @@ import "../player/player.css";
 import apiClient from "../../spotify";
 import SongCard from "../../components/songCard";
 import Queue from "../../components/queue";
+import AudioPlayer from "../../components/audioPlayer";
 
 const Player = (props) => {
   const location = useLocation();
@@ -18,7 +19,9 @@ const Player = (props) => {
       apiClient
         .get(`playlists/${location.state?.id}/tracks`)
         .then((response) => {
-          setTracks(response.data.items);
+          setTracks(
+            response?.data?.items.filter((item) => item?.track?.preview_url)
+          );
           setCurrentTrack(response.data.items[0].track);
         });
     }
@@ -29,7 +32,17 @@ const Player = (props) => {
   }, [currentIndex, tracks]);
   return (
     <div className="screen-container flex">
-      <div className="left-player-body"></div>
+      <div className="left-player-body">
+        {tracks.length > 0 && (
+          <AudioPlayer
+            currentTrack={currentTrack}
+            // isPlaying={true}
+            total={tracks}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+          />
+        )}
+      </div>
       <div className="right-player-body">
         <SongCard album={currentTrack?.album} />
         <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />

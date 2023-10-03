@@ -14,3 +14,29 @@
   border-radius: 20px;
   margin-top: 20px;
 }
+
+.btn-signOut {
+  height: 80px;
+  width: 80px;
+  border-radius: 20px;
+  color: #f8d9c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 6px auto;
+  transition: all 0.3s ease;
+  background-color: rgba(244, 187, 146, 0);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-signOut:hover {
+  color: white;
+}
+
+.btn-signOut-title {
+  margin: 4px auto;
+  font-weight: 600;
+  font-size: 16px;
+}

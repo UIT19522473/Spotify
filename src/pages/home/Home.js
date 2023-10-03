@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Library from "../library/Library";
-import Feed from "../feed/Feed";
-import Trending from "../trending/Trending";
+// import Feed from "../feed/Feed";
+// import Trending from "../trending/Trending";
 import Player from "../player/Player";
 import Favorites from "../favorites/Favorites";
 
@@ -23,9 +23,13 @@ const Home = () => {
     window.location.hash = "";
 
     if (!cookieToken && hash) {
-      const expires = hash.split("&")[2].split("=")[1];
+      // const expires = hash.split("&")[2].split("=")[1];
       const _token = hash.split("&")[0].split("=")[1];
-      Cookies.set("token", _token, { expires: expires * 1 }); // Lưu token vào cookie
+
+      const expirationDate = new Date(); // Lấy thời gian hiện tại
+      expirationDate.setSeconds(expirationDate.getSeconds() + 1200); // Thêm thời gian hết hạn
+
+      Cookies.set("token", _token, { expires: expirationDate }); // Lưu token vào cookie
       setToken(_token);
       setClientToken(_token);
     } else {
@@ -42,10 +46,11 @@ const Home = () => {
         <Sidebar />
         <Routes>
           <Route path="/" element={<Library />} />
-          <Route path="/feed" element={<Feed />} />
-          <Route path="/trending" element={<Trending />} />
+          {/* <Route path="/feed" element={<Feed />} />
+          <Route path="/trending" element={<Trending />} /> */}
           <Route path="/player" element={<Player />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </BrowserRouter>
