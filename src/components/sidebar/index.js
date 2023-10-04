@@ -3,8 +3,9 @@ import "./sidebar.css";
 import SidebarButton from "./SidebarButton";
 // import { MdSpaceDashboard, MdFavorite, MdLibraryMusic } from "react-icons/md";
 // import { FaGripfire, FaPlay, FaSignOutAlt } from "react-icons/fa";
+// import { MdFavorite, MdLibraryMusic } from "react-icons/md";
 
-import { MdFavorite, MdLibraryMusic } from "react-icons/md";
+import { MdLibraryMusic } from "react-icons/md";
 import { FaPlay, FaSignOutAlt } from "react-icons/fa";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
@@ -28,11 +29,11 @@ const Sidebar = () => {
         {/* <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />} />
         <SidebarButton title="Trending" to="/trending" icon={<FaGripfire />} /> */}
         <SidebarButton title="Player" to="/player" icon={<FaPlay />} />
-        <SidebarButton
+        {/* <SidebarButton
           title="Favorites"
           to="/favorites"
           icon={<MdFavorite />}
-        />
+        /> */}
         <SidebarButton title="Library" to="/" icon={<MdLibraryMusic />} />
       </div>
       <button onClick={handleSignOut} className="btn-signOut">
