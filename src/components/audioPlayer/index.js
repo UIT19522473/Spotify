@@ -53,6 +53,7 @@ const AudioPlayer = (props) => {
         audioRef.current.pause();
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying]);
 
   useEffect(() => {
@@ -67,6 +68,7 @@ const AudioPlayer = (props) => {
     } else {
       isReady.current = true;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex]);
 
   useEffect(() => {

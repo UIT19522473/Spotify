@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./sidebar.css";
 import SidebarButton from "./SidebarButton";
 // import { MdSpaceDashboard, MdFavorite, MdLibraryMusic } from "react-icons/md";
