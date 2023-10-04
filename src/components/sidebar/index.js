@@ -12,9 +12,8 @@ import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const [image, setImage] = useState(
-    "https://thegioionline.net/wp-content/uploads/2023/04/anh-gai-xinh-viet-nam-de-thuong-600x600-1.jpeg"
-  );
+  const image =
+    "https://thegioionline.net/wp-content/uploads/2023/04/anh-gai-xinh-viet-nam-de-thuong-600x600-1.jpeg";
 
   const handleSignOut = () => {
     // console.log("hello");
